@@ -20,17 +20,11 @@ searchBtn.addEventListener("click", function(event){
         cityName.textContent = "--"+data.city.name+"--";
 
         
-        document.querySelector(".tempature").textContent = "tempature: " + data.list[0].main.temp;
+        document.querySelector(".tempature").textContent = "tempature: " + Math.round(data.list[0].main.temp - 273.15) + "C";
+        document.querySelector(".icon").src="http://openweathermap.org/img/wn/" + data.list[0].weather[0].icon + ".png";
         document.querySelector(".date").textContent = "date: " + data.list[0].dt_txt;
-        document.querySelector(".humidity").textContent = "humidity: " + data.list[0].main.humidity;
+        document.querySelector(".humidity").textContent = "humidity: " + data.list[0].main.humidity +"%";
         document.querySelector(".wind").textContent = "wind speed: "+ data.list[0].wind.speed + " mph";
-        
-
-  
-          //Appending the dynamically generated html to the div associated with the id="users"
-          //Append will attach the element as the bottom most child.
-        //   usersContainer.append(userName);
-        //   usersContainer.append(userUrl);
        
     });
 })
