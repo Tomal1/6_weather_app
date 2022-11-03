@@ -1,8 +1,22 @@
 let cityInput = document.querySelector("#cityInput");
 let searchBtn = document.querySelector("#searchBtn");
 let cityName = document.querySelector("#cityName");
-let card = document.querySelector("#card");
+let card = document.querySelectorAll("#card");
 let dispContainer = document.querySelector("#dispContainer");
+
+
+let date = document.querySelectorAll(".date")
+let icon = document.querySelectorAll(".icon");
+let temp = document.querySelectorAll(".tempature");
+let humidity = document.querySelectorAll(".humidity");
+let wind = document.querySelectorAll(".wind");
+
+
+
+
+
+
+
 
 
 searchBtn.addEventListener("click", function(event){
@@ -19,12 +33,26 @@ searchBtn.addEventListener("click", function(event){
 
         cityName.textContent = "--"+data.city.name+"--";
 
+        for(let i=0; i<5; i++){
+            date[i].textContent = "date: "+data.list[i].dt_txt;
+        }
+
+        for(let i=0; i<5; i++){
+            icon[i].src="http://openweathermap.org/img/wn/"+data.list[i].weather[0].icon+".png";
+        }
         
-        document.querySelector(".tempature").textContent = "tempature: " + Math.round(data.list[0].main.temp - 273.15) + "C";
-        document.querySelector(".icon").src="http://openweathermap.org/img/wn/" + data.list[0].weather[0].icon + ".png";
-        document.querySelector(".date").textContent = "date: " + data.list[0].dt_txt;
-        document.querySelector(".humidity").textContent = "humidity: " + data.list[0].main.humidity +"%";
-        document.querySelector(".wind").textContent = "wind speed: "+ data.list[0].wind.speed + " mph";
+        
+        for(let i=0; i<5; i++){
+            temp[i].textContent = "tempature: "+Math.round(data.list[i].main.temp - 273.15)+"C";
+        }
+
+        for(let i=0; i<5; i++){
+            humidity[i].textContent = "humidity: "+data.list[i].main.humidity+"%";
+        }
+
+        for(let i=0; i<5; i++){
+            wind[i].textContent = "wind speed: "+data.list[i].wind.speed+" mph";
+        }
        
     });
 })
