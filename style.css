@@ -1,6 +1,13 @@
-body{
-    text-align: center;
-    font-family: Helvetica;
+*{
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+    background-color: rgb(88, 130, 132);
+    opacity: 0.8;
+    padding: 20px;
+    margin:0px 0px 20px 0px;
 }
 
 #dispContainer{
@@ -9,18 +16,58 @@ body{
 }
 
 #card{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     height:300px;
     width: 200px;
     border: 3px solid black;
     border-radius: 15px;
 }
 
-#card .content{
-    display: flex;
-    justify-content: center;
+#card span{
+    padding: 25px;
 }
 
+#cityName{
+    padding: 20px 0px 0px 20px;
+}
+
+.tempature{
+    position: relative;
+    top:15px;
+}
+
+img{
+    width: 100px;
+    height: 100px;
+}
 
 #form{
-    padding: 20px 0 0 0;;
+    padding: 20px 0px 20px 20px;
+    height: 60px;
+    width: 25%;
+}
+
+#form #cityInput{
+    height:20px;
+    width: 100%;
+}
+
+#form #searchBtn{
+    height:24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 101.2%;
+}
+
+#container{
+    padding: 0px 0px 0px 20px;
+    width: 25%;
+}
+
+.historyBtnStyle{
+    width: 101.2%;
+    height:24px;
 }

@@ -1,6 +1,7 @@
 let cityInput = document.querySelector("#cityInput");
 let searchBtn = document.querySelector("#searchBtn");
 let cityName = document.querySelector("#cityName");
+let container = document.querySelector("#container");
 
 let dateDisplay = document.querySelectorAll(".date");
 let icon = document.querySelectorAll(".icon");
@@ -49,10 +50,16 @@ let submissionObj ={
 }
 
 const stringifiedObj = JSON.stringify(submissionObj)
-console.log(stringifiedObj);
-
 localStorage.setItem("submission", stringifiedObj);
 
+let historyBtn = document.createElement("button");
+historyBtn.innerHTML = locationName;
+historyBtn.classList.add("historyBtnStyle");
+container.appendChild(historyBtn);
+
+historyBtn.addEventListener("click", function(){
+    console.log("hello");
+})
 
 }
 
