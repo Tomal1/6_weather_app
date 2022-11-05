@@ -5,8 +5,6 @@ let cityName = document.querySelector("#cityName");
 let dateDisplay = document.querySelectorAll(".date");
 let icon = document.querySelectorAll(".icon");
 let temp = document.querySelectorAll(".tempature");
-let minTemp = document.querySelectorAll(".min_temp");
-let maxTemp = document.querySelectorAll(".max_temp");
 let humidity = document.querySelectorAll(".humidity");
 let wind = document.querySelectorAll(".wind");
 
@@ -35,17 +33,9 @@ function newSearch(event){
         let j = 0;
         for (let i = 0; i < dataQuan.length; i = i + 8) {
           dateDisplay[j].textContent = dataQuan[i].dt_txt;
-          icon[j].src =
-            "http://openweathermap.org/img/wn/" +
-            data.list[i].weather[0].icon +
-            ".png";
+          icon[j].src ="http://openweathermap.org/img/wn/" +data.list[i].weather[0].icon +".png";
           temp[j].textContent = Math.round(data.list[i].main.temp - 273.15) + "C";
-          minTemp[j].textContent =
-            "low " + Math.round(data.list[i].main.temp_min - 273.15) + "C";
-          maxTemp[j].textContent =
-            "high " + Math.round(data.list[i].main.temp_max - 273.15) + "C";
-          humidity[j].textContent =
-            "humidity: " + data.list[i].main.humidity + "%";
+          humidity[j].textContent ="humidity: " + data.list[i].main.humidity + "%";
           wind[j].textContent = "wind speed: " + data.list[i].wind.speed + " mph";
           j = j + 1;
         }
