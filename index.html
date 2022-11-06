@@ -1,61 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>weather app</title>
-</head>
-<body>
-    <h1>5 day weather forecast</h1>
-<div id="dispContainer">
-    <div id="card" class="card1">
+  </head>
+  <body>
+    <h1>Welcome to your 5 day weather forecast</h1>
+    <div id="dispContainer">
+      <div id="card" class="card1">
         <span class="date"></span>
-        <img src="" class="icon">
+        <img src="" class="icon" />
         <span class="tempature"></span>
         <span class="humidity"></span>
         <span class="wind"></span>
-    </div>
-    <div id="card" class="card2">
+      </div>
+      <div id="card" class="card2">
         <span class="date"></span>
-        <img src="" class="icon">
+        <img src="" class="icon" />
         <span class="tempature"></span>
         <span class="humidity"></span>
         <span class="wind"></span>
-    </div>
-    <div id="card" class="card3">
+      </div>
+      <div id="card" class="card3">
         <span class="date"></span>
-        <img src="" class="icon">
+        <img src="" class="icon" />
         <span class="tempature"></span>
         <span class="humidity"></span>
         <span class="wind"></span>
-    </div>
-    <div id="card" class="card4">
-         <span class="date"></span>
-        <img src="" class="icon">
-        <span class="tempature"></span>
-        <span class="humidity"></span>
-        <span class="wind"></span>
-    </div>
-    <div id="card" class="card5">
+      </div>
+      <div id="card" class="card4">
         <span class="date"></span>
-        <img src="" class="icon">
+        <img src="" class="icon" />
         <span class="tempature"></span>
         <span class="humidity"></span>
         <span class="wind"></span>
+      </div>
+      <div id="card" class="card5">
+        <span class="date"></span>
+        <img src="" class="icon" />
+        <span class="tempature"></span>
+        <span class="humidity"></span>
+        <span class="wind"></span>
+      </div>
     </div>
-</div>
-    <h2 id="cityName">location name</h2>
+    <h2 id="cityName" style="color:aliceblue">location name</h2>
 
     <form id="form">
-        <input id="cityInput" type="text" placeholder="search for a city" required>
-        <input type="submit" value="search" id="searchBtn">
+      <input
+        id="cityInput"
+        type="text"
+        placeholder="search for a city"
+        required
+      />
+      <input type="submit" value="search" id="searchBtn" />
     </form>
     <div id="container"></div>
-
+    <div class="photo">
+        Photo by <a href="https://unsplash.com/@piperita?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">rita peron</a> on <a href="https://unsplash.com/s/photos/rainbow-mountains?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+    </div>
     
-</body>
-<script src="script.js"></script>
-
+  </body>
+  <script src="script.js"></script>
 </html>

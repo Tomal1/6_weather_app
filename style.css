@@ -1,100 +1,113 @@
-*{
-    margin: 0;
-    padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-body{
-    background-image: url(./sample.jpeg);
-    background-repeat: no-repeat;
-    background-size: cover;
+body {
+  background-image: url(./rita-peron-2MHiTLcUuAU-unsplash.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-h1{
-    background-color: rgb(88, 130, 132);
-    opacity: 0.8;
+h1 {
+  background-color: rgb(88, 130, 132);
+  opacity: 0.8;
+  padding: 20px;
+  margin: 0px 0px 20px 0px;
+}
+
+#dispContainer {
+  display: flex;
+  justify-content: space-around;
+}
+
+#card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: 300px;
+  width: 200px;
+  border-radius: 15px;
+  background: black;
+  color: aliceblue;
+  opacity: 0.7;
+}
+
+#card span {
+  padding: 25px;
+}
+
+#cityName {
+  padding: 20px 0px 0px 20px;
+}
+
+.tempature {
+  position: relative;
+  top: 15px;
+}
+
+img {
+  width: 100px;
+  height: 100px;
+}
+
+#form {
+  padding: 20px 0px 20px 20px;
+  height: 60px;
+  width: 25%;
+}
+
+#form #cityInput {
+  height: 20px;
+  width: 100%;
+  border-style: none;
+}
+
+#form #searchBtn {
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border-style: none;
+  background-color: rgb(88, 130, 132);
+}
+
+#form #searchBtn:hover {
+  opacity: 0.8;
+  cursor: pointer;
+  box-shadow: 5px 5px 5px 5px;
+}
+
+#container {
+  padding: 0px 0px 0px 20px;
+  width: 25%;
+}
+
+.historyBtnStyle {
+  margin: 0px 0px 5px 0px;
+  width: 100%;
+  height: 24px;
+  border-style: none;
+  background-color: rgb(88, 130, 132);
+}
+
+.historyBtnStyle:hover {
+  opacity: 0.8;
+  cursor: pointer;
+  box-shadow: 5px 5px 5px 5px;
+}
+
+.photo{
+    color: aliceblue;
     padding: 20px;
-    margin:0px 0px 20px 0px;
+}
+.photo a{
+    text-decoration: none;
+    color: aliceblue;
 }
 
-#dispContainer{
-    display: flex;
-    justify-content: space-around;
-}
-
-#card{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    height:300px;
-    width: 200px;
-    border-radius: 15px;
-    background: black;
-    color: white;
-    opacity: 0.7;
-}
-
-#card span{
-    padding: 25px;
-}
-
-#cityName{
-    padding: 20px 0px 0px 20px;
-}
-
-.tempature{
-    position: relative;
-    top:15px;
-}
-
-img{
-    width: 100px;
-    height: 100px;
-}
-
-#form{
-    padding: 20px 0px 20px 20px;
-    height: 60px;
-    width: 25%;
-}
-
-#form #cityInput{
-    height:20px;
-    width: 100%;
-    border-style: none;
-}
-
-#form #searchBtn{
-    height:24px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    border-style: none;
-    background-color: rgb(88, 130, 132);
-}
-
-#form #searchBtn:hover{
-    opacity: 0.8;
-    cursor: pointer;
-    box-shadow: 5px 5px 5px 5px;
-}
-
-#container{
-    padding: 0px 0px 0px 20px;
-    width: 25%;
-}
-
-.historyBtnStyle{
-    margin: 0px 0px 5px 0px;
-    width: 100%;
-    height:24px;
-    border-style: none;
-    background-color: rgb(88, 130, 132);
-}
-
-.historyBtnStyle:hover{
-    opacity: 0.8;
-    cursor: pointer;
-    box-shadow: 5px 5px 5px 5px;
+.photo a:hover{
+    color: blue;
 }
