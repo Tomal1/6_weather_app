@@ -13,10 +13,13 @@ dispContainer.style.visibility = "hidden";
 
 function newSearch(event) {
   event.preventDefault(); // our function is inside a form so we have to stop it from submitting
+  search(cityInput.value);
+}
 
+  function search(arg) {
   fetch(
     "https://api.openweathermap.org/data/2.5/forecast?q=" +
-      cityInput.value +
+      arg +
       "&appid=58fa8407237375f8467842ce20027a4c"
   )
     .then(function (response) {
@@ -24,11 +27,11 @@ function newSearch(event) {
 
       if (response.status === 404) {
         cityName.textContent =
-          "'" + cityInput.value + "'" + " is not a valid city";
+          "'" + arg.value + "'" + " is not a valid city";
         dispContainer.style.visibility = "hidden";
-      } else if (cityInput.value === "") {
+      } else if (arg.value === "") { 
         alert("input field is required");
-        cityName.textContent = "location name";
+        arg.textContent = "location name";
         dispContainer.style.visibility = "hidden";
       } else if (response.status === 200) {
         dispContainer.style.visibility = "visible";
@@ -39,7 +42,7 @@ function newSearch(event) {
     .then(function (data) {
       console.log(data);
 
-      cityName.textContent = data.city.name;
+      cityName.textContent = arg;
 
       let dataQuan = data.list; //for loop cant read data.list so have to store it into a variable first
       let j = 0;
@@ -57,7 +60,7 @@ function newSearch(event) {
       }
 
       //storing data into localStorage
-      const locationName = cityInput.value;
+      const locationName = arg;
       let submissionObj = {
         locationName,
       };
@@ -66,14 +69,14 @@ function newSearch(event) {
 
       // making a new button if city can be successfully located
       let historyBtn = document.createElement("button");
-      historyBtn.innerHTML = cityInput.value;
+      historyBtn.innerHTML = arg;
       historyBtn.classList.add("historyBtnStyle"); //used for css to style
       container.appendChild(historyBtn);
       //when clicking new button it accesses local storage to find value
       historyBtn.addEventListener("click", function () {
         let unstring = JSON.parse(stringifiedObj); //stringify the object to make it JSON readable
 
-        console.log(unstring.locationName); //typeof is a string and gives value that we want, but how do i get it to go through the function again
+        search(unstring.locationName);
       });
     });
 }
