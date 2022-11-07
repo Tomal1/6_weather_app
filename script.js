@@ -16,22 +16,22 @@ function newSearch(event) {
   search(cityInput.value);
 }
 
-  function search(arg) {
+function search(arg) {
+  // was cityName
   fetch(
     "https://api.openweathermap.org/data/2.5/forecast?q=" +
-      arg +
+      arg + //
       "&appid=58fa8407237375f8467842ce20027a4c"
   )
     .then(function (response) {
       console.log(response);
 
       if (response.status === 404) {
-        cityName.textContent =
-          "'" + arg.value + "'" + " is not a valid city";
+        cityName.textContent = "'" + arg.value + "'" + " is not a valid city";
         dispContainer.style.visibility = "hidden";
-      } else if (arg.value === "") { 
+      } else if (arg === "") {
         alert("input field is required");
-        arg.textContent = "location name";
+        cityName.textContent = "location name";
         dispContainer.style.visibility = "hidden";
       } else if (response.status === 200) {
         dispContainer.style.visibility = "visible";
