@@ -17,7 +17,8 @@ function newSearch(event) {
   fetch(
     "https://api.openweathermap.org/data/2.5/forecast?q=" +
       cityInput.value +
-      "&appid=58fa8407237375f8467842ce20027a4c")
+      "&appid=58fa8407237375f8467842ce20027a4c"
+  )
     .then(function (response) {
       console.log(response);
 
@@ -25,16 +26,14 @@ function newSearch(event) {
         cityName.textContent =
           "'" + cityInput.value + "'" + " is not a valid city";
         dispContainer.style.visibility = "hidden";
-      }
-      else if (cityInput.value === "") {
+      } else if (cityInput.value === "") {
         alert("input field is required");
         cityName.textContent = "location name";
         dispContainer.style.visibility = "hidden";
-      } 
-      else if (response.status === 200) {
+      } else if (response.status === 200) {
         dispContainer.style.visibility = "visible";
-      } 
-      
+      }
+
       return response.json();
     })
     .then(function (data) {
@@ -57,33 +56,26 @@ function newSearch(event) {
         j = j + 1;
       }
 
-      // making a new button if city can be successfully located
-      let historyBtn = document.createElement("button");
-      historyBtn.innerHTML = cityInput.value;
-      historyBtn.classList.add("historyBtnStyle"); //used for css to style
-      container.appendChild(historyBtn);
-
-      historyBtn.addEventListener("click",fetch("https://api.openweathermap.org/data/2.5/forecast?q="+historyBtn.innerHTML+"&appid=58fa8407237375f8467842ce20027a4c"));
-
-      //and then storing data into localStorage
+      //storing data into localStorage
       const locationName = cityInput.value;
       let submissionObj = {
         locationName,
       };
       const stringifiedObj = JSON.stringify(submissionObj);
       localStorage.setItem(locationName, stringifiedObj);
+
+      // making a new button if city can be successfully located
+      let historyBtn = document.createElement("button");
+      historyBtn.innerHTML = cityInput.value;
+      historyBtn.classList.add("historyBtnStyle"); //used for css to style
+      container.appendChild(historyBtn);
+      //when clicking new button it accesses local storage to find value
+      historyBtn.addEventListener("click", function () {
+        let unstring = JSON.parse(stringifiedObj); //stringify the object to make it JSON readable
+
+        console.log(unstring.locationName); //typeof is a string and gives value that we want, but how do i get it to go through the function again
+      });
     });
-
-
-
-
-
 }
 
 searchBtn.addEventListener("click", newSearch);
-
-
-// retrieving data from local storage
-// let stringifiedObj = localStorage.getItem("delhi");
-// console.log(stringifiedObj);
-
