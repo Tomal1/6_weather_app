@@ -5,7 +5,7 @@ A wether app, where the user inputs a city name and the next 5 days weather cond
 
 The app uses the input and appends it to the API url to extrapolate all relevant data (such as temperature, date, wind speed ect..) to populate the cards.
 
-deployed website URL:
+deployed website URL: https://tomal1.github.io/6_weather_app/
 
 gitHub repo URL: https://github.com/Tomal1/6_weather_app
 
