@@ -13,13 +13,15 @@ gitHub repo URL: https://github.com/Tomal1/6_weather_app
 
 When the user types in a city name and press's the search button, 5 cards will be displayed in the middle of the screen with weather condition for the next 5 days. 
 
-<!--![alt text](assets/images/startScreen.png)-->
+![alt text](assets/images/display.png)
 
 If the user dose not input any text into search field but still press's the search button; an alert will be displayed requesting the user that the input cannot be left empty.
 
-<!--![alt text](assets/images/wrongSelection.png)-->
+![alt text](assets/images/emptyinput.png)
 
 If the user inputs a city that the API dose not recognise (404 bad request); a message just above the input field will let the user know that the input was not a valid city name.
+
+![alt text](assets/images/badRequest.png)
 
 
 ## License
