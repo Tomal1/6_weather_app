@@ -9,36 +9,34 @@ let temp = document.querySelectorAll(".tempature");
 let humidity = document.querySelectorAll(".humidity");
 let wind = document.querySelectorAll(".wind");
 
-
-
 dispContainer.style.visibility = "hidden";
 
-
-
-searchBtn.addEventListener("click", function(event){
-    event.preventDefault();
+searchBtn.addEventListener("click", function (event) {
+  event.preventDefault();
 
   if (cityInput.value === "") {
     alert("input field is required");
-    return cityName.textContent = "location name";
-  } else { 
-   return search(cityInput.value);
+    return (cityName.textContent = "location name");
+  } else {
+    return search(cityInput.value);
   }
-})
-
-
+});
 
 function search(arg) {
-  fetch("https://api.openweathermap.org/data/2.5/forecast?q="+arg+"&appid=58fa8407237375f8467842ce20027a4c")
+  fetch(
+    "https://api.openweathermap.org/data/2.5/forecast?q=" +
+      arg +
+      "&appid=58fa8407237375f8467842ce20027a4c"
+  )
     .then(function (response) {
       console.log(response.status);
 
       if (response.status == 404) {
-      cityName.textContent = "'" + arg + "'" + " is not a valid city";
-      } else if (response.status === 200){
-      dispContainer.style.visibility = "visible";
+        cityName.textContent = "'" + arg + "'" + " is not a valid city";
+      } else if (response.status === 200) {
+        dispContainer.style.visibility = "visible";
       }
-      
+
       return response.json();
     })
     .then(function (data) {
@@ -49,7 +47,7 @@ function search(arg) {
       let dataQuan = data.list;
 
       let j = 0;
-      for (let i=0; i<dataQuan.length; i=i+8) {
+      for (let i = 0; i < dataQuan.length; i = i + 8) {
         dateDisplay[j].textContent = data.list[i].dt_txt;
         icon[j].src =
           "http://openweathermap.org/img/wn/" +
@@ -76,13 +74,11 @@ function search(arg) {
       historyBtn.innerHTML = arg;
       historyBtn.classList.add("historyBtnStyle"); //used for css to style
       container.appendChild(historyBtn);
-      
+
       //when clicking new button it accesses local storage to find value
       historyBtn.addEventListener("click", function () {
         let unstring = JSON.parse(stringifiedObj); //stringify the object to make it JSON readable
         search(unstring.locationName);
-      })
-    })
+      });
+    });
 }
-
-
