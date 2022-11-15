@@ -48,11 +48,15 @@ function search(arg) {
 
       let j = 0;
       for (let i = 0; i < dataQuan.length; i = i + 8) {
-        dateDisplay[j].textContent = data.list[i].dt_txt;
-        icon[j].src =
-          "http://openweathermap.org/img/wn/" +
-          data.list[i].weather[0].icon +
-          ".png";
+        
+        let x = data.list[i].dt_txt;
+        let y = x.split(" ");
+
+        dateDisplay[j].textContent = y[0];
+
+        icon[j].src ="http://openweathermap.org/img/wn/" + data.list[i].weather[0].icon +".png";
+
+        
         temp[j].textContent = Math.round(data.list[i].main.temp - 273.15) + "C";
         humidity[j].textContent =
           "humidity: " + data.list[i].main.humidity + "%";
